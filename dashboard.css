@@ -1,0 +1,309 @@
+/* 🌿 Base Styling */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f4f9f4;
+  margin: 0;
+  color: #222;
+}
+
+/* 🌿 Top Bar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2e7d32;
+  color: white;
+  padding: 12px 20px;
+}
+
+.profile-menu {
+  position: relative;
+}
+
+.profile-icon {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 220px;
+}
+
+.dropdown.show {
+  display: block;
+}
+
+/* 🌿 Layout */
+.dashboard-container {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+.sidebar {
+  width: 200px;
+  background: #a5d6a7;
+  padding: 15px;
+}
+
+.sidebar h2 {
+  color: #1b5e20;
+  margin-bottom: 15px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.sidebar li:hover {
+  background: #81c784;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 🌿 Course Section */
+#courseList,
+#enrolledList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+/* 🌿 Course Card (Default) */
+.course-card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* 🌿 Full Image (No Crop) */
+.course-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* 🌿 Course Title */
+.course-card h3 {
+  margin: 10px 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* 🌿 Start Button (Big, Stylish) */
+.start-btn {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
+  margin-top: 10px;
+}
+
+.start-btn:hover {
+  background-color: #27ae60;
+  transform: scale(1.08);
+}
+
+/* 🌿 Enroll Button */
+.enroll-btn {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+.enroll-btn:hover {
+  background: #1b5e20;
+}
+
+/* 🌿 Enrolled Courses (Smaller, Compact Style) */
+#enrolledList .course-card {
+  min-height: 250px;
+  padding: 12px;
+}
+
+#enrolledList .course-card img {
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+#enrolledList .course-card h3 {
+  font-size: 1rem;
+  margin: 6px 0;
+}
+
+#enrolledList .start-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
+
+/* 🌿 Enrolled Card */
+.enrolled-card {
+  background: #e8f5e9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.complete-btn {
+  background: #43a047;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.complete-btn:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* 🌿 Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  #courseList,
+  #enrolledList {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 🌿 Navbar Styling */
+.top-nav {
+  background-color: #2e7d32; /* green bar */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  border-radius: 0 0 10px 10px;
+}
+
+.top-left h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* 🌿 Right side list */
+.top-right ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.top-right li {
+  background-color: #43a047; /* slightly lighter green box */
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.top-right li:hover {
+  background-color: #66bb6a;
+  transform: scale(1.05);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #2e7d32; /* dark green */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  border-radius: 0 0 10px 10px;
+}
+
+.nav-left h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ===== BUTTONS (Top Right) ===== */
+.nav-mid {
+  display: flex;
+  gap: 35px; 
+  margin-left: 42px;/* equal spacing between buttons */
+}
+
+.nav-btn {
+  background-color: #43a047; /* medium green */
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-btn:hover {
+  background-color: #66bb6a;
+  transform: scale(1.05);
+}

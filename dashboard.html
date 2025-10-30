@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌿 Smart Green Learning - Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <!-- 🌿 TOP BAR -->
+  <header class="topbar">
+   
+    <nav class="navbar">
+  <div class="nav-left">
+    <h2>🌿 Smart Green Learning</h2>
+  </div>
+
+  <div class="nav-mid">
+    <button class="nav-btn" onclick="showSection('courses')">📚 Course List</button>
+    <button class="nav-btn" onclick="showSection('enrolled')">✅ Enrolled Courses</button>
+  </div>
+</nav>
+
+   
+
+    <div class="top-right">
+      <div class="profile-menu">
+        <div class="profile-icon" id="profileBtn">🍃</div>
+        <div class="dropdown" id="dropdownMenu">
+          <p><strong>Name:</strong> <span id="pName">Swetha</span></p>
+          <p><strong>Email:</strong> <span id="pEmail">swetha@gmail.com</span></p>
+          <p><strong>Enrolled:</strong> <span id="pEnroll">0</span></p>
+          <hr />
+          <a href="#">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🧭 DASHBOARD LAYOUT -->
+  <div class="dashboard-container">
+   
+
+    <!-- Main content -->
+    <div class="main-content">
+      <!-- Course list -->
+      <section id="courses" class="section">
+        <h2>Available Courses</h2>
+        <div id="courseList"></div>
+      </section>
+
+      <!-- Enrolled courses -->
+      <section id="enrolled" class="section hidden">
+        <h2>My Enrolled Courses</h2>
+        <div id="enrolledList"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
